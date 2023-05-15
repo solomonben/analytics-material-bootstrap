@@ -1,0 +1,18 @@
+:host {
+
+    .folded:not(.unfolded) & {
+
+        .nav-link {
+
+            > .nav-link-title,
+            > .nav-link-badge {
+                opacity: 0;
+                transition: opacity 200ms ease;
+            }
+        }
+    }
+    a:hover {
+        background-color: rgb(78, 78, 72) !important;
+        color:gray !important;
+      }
+}

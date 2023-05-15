@@ -1,0 +1,42 @@
+<div class="logincenter">
+    
+  <div class="allcart-content">
+    <div class="row g-0">
+      <div class="col-sm">
+        <a href="/app">
+          <div class="d-flex">
+            <img class="allcart-logo" src="assets/images/allcart-logo.svg" alt="Allcart logo">
+            <img class="allcart-text" src="assets/images/allcart.svg" alt="Allcart">
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+<h4 class="card-header" style="font-weight:900;font-family:Verdana, Geneva, Tahoma, sans-serif">Login</h4>
+<div class="card-body">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+          <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+              <div *ngIf="f.username.errors.required">Username is required</div>
+          </div>
+      </div>
+      <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+              <div *ngIf="f.password.errors.required">Password is required</div>
+          </div>
+      </div>
+      <div class="form-group">
+          <button [disabled]="loading" class="btn btn-primary">
+              <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+              Login
+          </button>
+          <a routerLink="/apps/register/register" class="btn btn-link">Register</a>
+      </div>
+  </form>
+</div>
+</div>
