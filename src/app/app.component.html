@@ -38,5 +38,15 @@
     <fuse-theme-options></fuse-theme-options>
 </fuse-sidebar>
 <!-- / THEME OPTIONS PANEL -->
-
+<!-- <div class="example-button-container">
+    <button mat-fab color="warn" aria-label="Example icon button with a home icon">
+      <mat-icon>chat</mat-icon>
+    </button>
+  </div> -->
+<div class="mt10 pl10 pr10" fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-end" style="z-index: 10000;">
+    <!-- <button class="chatbutton" [routerLink]="['/apps/chat']" mat-fab color="warn"  aria-label="Example icon button with a home icon"> -->
+    <button class="chatbutton" (click)="toggleSidebarOpen('quickPanel')"  mat-fab color="primary"  aria-label="Example icon button with a home icon">
+        <mat-icon>chat</mat-icon>
+    </button>
+</div>
 <router-outlet></router-outlet>

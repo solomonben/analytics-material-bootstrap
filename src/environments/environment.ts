@@ -5,13 +5,7 @@
 export const environment = {
     production: false,
     hmr       : false,
-    apiUrl: 'http://localhost:4000',
-    admin_user : {
-        firstName: 'Stash', 
-        lastName: 'Harrison', 
-        username: 'stashharrison', 
-        password: 'marketIntent2023', 
-        id: 1}
+    apiUrl: 'http://localhost:4000'
 };
 
 /*

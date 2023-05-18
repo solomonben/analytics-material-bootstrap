@@ -2,12 +2,46 @@ quick-panel {
     display: flex;
     flex-direction: column;
     flex: 1 1 auto;
-    width: 280px;
-    min-width: 280px;
-    max-width: 280px;
-    z-index: 99;
-
+    width: 380px !important;
+    min-width: 380px !important;
+    max-width: 380px !important;
+    z-index: 99;    
+    // width: 280px;
+    // min-width: 280px;
+    // max-width: 280px;
     .mat-slide-toggle-content {
         flex: 1;
     }
+}
+
+.mat-tab-group {
+    margin-bottom: 48px;
+}
+
+  
+  ::ng-deep .mat-tab-label, ::ng-deep .mat-tab-label-active{
+    min-width: 0!important;
+    padding: 3px!important;
+    margin: 3px!important;
+   }
+
+
+fuse-sidebar {
+    width: 350px !important;
+    min-width: 350px !important;
+    max-width: 350px !important;
+}
+
+.mat-tab-label {
+    height: 48px;
+    cursor: pointer;
+    box-sizing: border-box;
+    opacity: .6;
+    min-width: 50px !important;
+    text-align: center;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    position: relative;
 }

@@ -77,7 +77,20 @@ export const navigation: FuseNavigation[] = [
                 type : 'item',
                 url  : '/apps/dashboards/recommendation',
                 icon : 'thumb_up',
-            }
+            },
+        //     {
+        //         id       : 'chat',
+        //         title    : 'Chat',
+        //         translate: 'NAV.CHAT',
+        //         type     : 'item',
+        //         icon     : 'chat',
+        //         url      : '/apps/chat',
+        //         badge    : {
+        //             title: '13',
+        //             bg   : '#09d261',
+        //             fg   : '#FFFFFF'
+        //         }
+        //    },
             // {
             //     id       : 'calendar',
             //     title    : 'Calendar',
