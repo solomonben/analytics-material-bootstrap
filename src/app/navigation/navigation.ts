@@ -19,11 +19,11 @@ export const navigation: FuseNavigation[] = [
                 id   : 'market',
                 title: 'Market Share',
                 type : 'item',
-                url  : '/apps/dashboards/market',
+                url  : '/apps/dashboards/marketshare',
                 icon : 'store',
             },
 			{
-                id   : 'competitors',
+                id   : 'competitor',
                 title: 'Competitors',
                 type : 'item',
                 url  : '/apps/dashboards/competitors',

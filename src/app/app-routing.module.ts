@@ -7,33 +7,39 @@ const analyticsModule = () => import('./main/apps/dashboards/analytics/analytics
 const projectModule = () => import('./main/apps/dashboards/project/project.module').then(x => x.ProjectDashboardModule);
 const appsModule = () => import('./main/apps/apps.module').then(x => x.AppsModule);
 const appRoutes: Routes = [
-  {
-      path        : 'apps',
-      loadChildren: './main/apps/apps.module#AppsModule'
-  },
-  {
-      path        : 'pages',
-      loadChildren: './main/pages/pages.module#PagesModule'
-  },
-  {
-      path        : 'ui',
-      loadChildren: './main/ui/ui.module#UIModule'
-  },
-  {
-      path        : 'documentation',
-      loadChildren: './main/documentation/documentation.module#DocumentationModule'
-  },
-  {
-      path : '**',redirectTo: 'apps/dashboards/home'
-  },
-  { path: 'account', loadChildren: accountModule },
-  
+    {
+        path: 'apps',
+        loadChildren: './main/apps/apps.module#AppsModule'
+    },
+    {
+        path: 'pages',
+        loadChildren: './main/pages/pages.module#PagesModule'
+    },
+    {
+        path: 'ui',
+        loadChildren: './main/ui/ui.module#UIModule'
+    },
+    {
+        path: 'documentation',
+        loadChildren: './main/documentation/documentation.module#DocumentationModule'
+    },
+    {
+        path: '**', redirectTo: 'apps/dashboards/home'
+    },
+    {
+        path: 'marketshare', redirectTo: 'apps/dashboards/marketshare'
+    },
+    {
+        path: 'competitors', redirectTo: 'apps/dashboards/competitors'
+    },
+    { path: 'account', loadChildren: accountModule },
+
 ];
 
 
 @NgModule({
-  declarations: [],
-  imports: [RouterModule.forRoot(appRoutes),CommonModule],
-  exports: [RouterModule]
+    declarations: [],
+    imports: [RouterModule.forRoot(appRoutes), CommonModule],
+    exports: [RouterModule]
 })
 export class AppRoutingModule { }

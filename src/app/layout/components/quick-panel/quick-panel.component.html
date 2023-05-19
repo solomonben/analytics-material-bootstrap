@@ -1,11 +1,44 @@
 <div fxLayout="column" fxFlex fusePerfectScrollbar>
     <mat-tab-group style="width: 350px;" mat-stretch-tabs="false" mat-align-tabs="start">
-        <mat-tab label="Chat"> 
-            
+        <mat-tab  style="margin-bottom: 10px;">
+             
+              <ng-template mat-tab-label>
+                <mat-icon>chat</mat-icon>
+                <span>Chat</span>
+            </ng-template>
+            <div class="containerChat">
+                <div class="cardchat">
+                    <div class="chat-list" #chatListContainer>
+                        <ng-container *ngFor="let item of chatMessages">
+                            <div class="chat-item"
+                                [ngClass]="{'right' : item?.user?.id == human.id, 'left': item?.user?.id != human.id}">
+                                <img id="avatar" [src]="item?.user?.profileImageUrl">
+                                <p id="message-body">{{item?.message}}</p>
+                            </div>
+                        </ng-container>
+                    </div>
+                    <div class="chat-footer">
+                        <input matInput id="chat-textarea" [(ngModel)]="chatInputMessage" required>
+                        <button id="send-button" (click)="send()" [disabled]="chatInputMessage === ''">
+                            <mat-icon>send</mat-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="caption">
+                <button id="clear-button" (click)="clearConversation()">
+                    clear conversation
+                </button>
+            </div> -->
         </mat-tab>
-        <mat-tab label="Compose"> Content 2 </mat-tab>
+        <mat-tab label="Compose">
+            <ng-template mat-tab-label>
+                <mat-icon>import_contacts</mat-icon>
+                <span>Compose</span>
+            </ng-template>
+         </mat-tab>
         <mat-tab label="Insights"> Content 3 </mat-tab>
-      </mat-tab-group>
+    </mat-tab-group>
     <!-- <mat-list class="date" cdkFocusRegionStart>
 
         <h3 matSubheader cdkFocusInit>

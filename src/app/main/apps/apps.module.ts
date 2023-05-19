@@ -12,66 +12,68 @@ const analyticModule = () => import('./dashboards/analytic/analytic.module').the
 const routes = [
     { path: 'login', loadChildren: loginModule },
     { path: 'register', loadChildren: registerModule },
-    { path: 'dashboards/analytic', loadChildren: analyticModule,canActivate: [AuthGuard] },
+    { path: 'dashboards/analytic', loadChildren: analyticModule, canActivate: [AuthGuard] },
     {
-        path        : 'dashboards/analytics',canActivate: [AuthGuard],
+        path: 'dashboards/analytics', canActivate: [AuthGuard],
         loadChildren: './dashboards/analytics/analytics.module#AnalyticsDashboardModule'
     },
     {
-        path        : 'dashboards/home',canActivate: [AuthGuard],
+        path: 'dashboards/home', canActivate: [AuthGuard],
         loadChildren: './dashboards/project/project.module#ProjectDashboardModule'
     },
     {
-        path        : 'mail',
+        path: 'mail',
         loadChildren: './mail/mail.module#MailModule'
     },
     {
-        path        : 'mail-ngrx',
+        path: 'mail-ngrx',
         loadChildren: './mail-ngrx/mail.module#MailNgrxModule'
     },
     {
-        path        : 'chat',
+        path: 'chat',
         loadChildren: './chat/chat.module#ChatModule'
     },
     {
-        path        : 'calendar',
+        path: 'calendar',
         loadChildren: './calendar/calendar.module#CalendarModule'
     },
     {
-        path        : 'e-commerce',
+        path: 'e-commerce',
         loadChildren: './e-commerce/e-commerce.module#EcommerceModule'
     },
     {
-        path        : 'academy',
+        path: 'academy',
         loadChildren: './academy/academy.module#AcademyModule'
     },
     {
-        path        : 'todo',
+        path: 'todo',
         loadChildren: './todo/todo.module#TodoModule'
     },
     {
-        path        : 'file-manager',
+        path: 'file-manager',
         loadChildren: './file-manager/file-manager.module#FileManagerModule'
     },
     {
-        path        : 'contacts',
+        path: 'contacts',
         loadChildren: './contacts/contacts.module#ContactsModule'
     },
     {
-        path        : 'scrumboard',
+        path: 'scrumboard',
         loadChildren: './scrumboard/scrumboard.module#ScrumboardModule'
-    }
+    },
+    { path: 'dashboards/marketshare', canActivate: [AuthGuard], loadChildren: () => import('./dashboards/marketshare/marketshare.module').then(m => m.MarketshareModule) },
+    { path: 'dashboards/competitors', loadChildren: () => import('./dashboards/competitors/competitors.module').then(m => m.CompetitorsModule) },
+    { path: 'competitors', loadChildren: () => import('./dashboards/competitors/competitors.module').then(m => m.CompetitorsModule) }
 ];
 
 @NgModule({
-    imports     : [
+    imports: [
         RouterModule.forChild(routes),
         FuseSharedModule,
         ReactiveFormsModule,
         FormsModule
     ]
 })
-export class AppsModule
-{
+export class AppsModule {
 }
 
